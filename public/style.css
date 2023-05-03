@@ -1,41 +1,124 @@
 body {
-    background-color: black;
-    color: white;
-  }
+  background-color: black;
+  color: white;
+}
 
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
 
-  button {
-    background-color: #3b3b3b;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin: 10px;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-  button:hover {
-    background-color: #008080;
-  }
+button {
+  background-color: #3b3b3b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
 
-  h1 {
-    font-size: 48px;
-    font-weight: bold;
-    margin: 0;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    margin-bottom: 50px;
+button:hover {
+  background-color: #008080;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 50px;
+}
+
+#micAudio {
+  display: none;
+}
+
+#start {
+  display: block;
+}
+
+#stop {
+  display: none;
+}
+
+
+
+
+
+ 
+
+.loader {
+  display: none;
+  width: 80px;
+  height: 75px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform: rotateY(0deg) rotateX(180deg);
+}
+
+.bar {
+  background: #f2f2f2;
+  height: 0px;
+  width: 15px;
+  display: inline-block;
+  margin-right: -3px;
+  animation: bar infinite 2s;
+  vertical-align: top;
+}
+
+.bar-1 {
+  animation-delay: 1s;
+}
+
+.bar-2 {
+  animation-delay: 1.4s;
+}
+
+.bar-3 {
+  animation-delay: 1.8s;
+}
+
+.bar-4 {
+  animation-delay: 2.2s;
+}
+
+.bar-5 {
+  animation-delay: 2.6s;
+}
+
+@keyframes bar {
+  0% {
+    height: 0px;
   }
+  15% {
+    height: 22px;
+  }
+  35% {
+    height: 14px;
+  }
+  45% {
+    height: 45px;
+  }
+  75% {
+    height: 75px;
+  }
+  100% {
+    height: 0px;
+  }
+}

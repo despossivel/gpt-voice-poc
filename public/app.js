@@ -13,8 +13,8 @@ startButton.addEventListener('click', () => {
     .then(stream => {
       mediaRecorder = new MediaRecorder(stream);
       mediaRecorder.start();
-      startButton.disabled = true;
-      stopButton.disabled = false;
+      startButton.style.display = 'none';
+      stopButton.style.display = 'block';
 
       // Quando um novo fragmento de áudio é gravado
       mediaRecorder.addEventListener('dataavailable', event => {
@@ -27,7 +27,7 @@ startButton.addEventListener('click', () => {
         const audioBlob = new Blob(chunks);
         const audioUrl = URL.createObjectURL(audioBlob);
         audio.src = audioUrl;
-        // audio.play();
+ 
         console.log(audioUrl)
 
         // Habilita o botão de upload
@@ -43,8 +43,9 @@ startButton.addEventListener('click', () => {
 const stopButton = document.getElementById('stop');
 stopButton.addEventListener('click', () => {
   mediaRecorder.stop();
-  startButton.disabled = false;
-  stopButton.disabled = true;
+  startButton.style.display = 'block';
+  stopButton.style.display = 'none';
+  
   setTimeout(() => {
     upload()
   }, 2000)
@@ -60,6 +61,11 @@ socket.on('audio', (data) => {
   // byteLength: 887736
   audioReceive.play();
   chunksReceive = [];
+
+
+  // audioReceive.style.display = 'none'
+  // loader.style.display = 'block'
+
 });
 
 
